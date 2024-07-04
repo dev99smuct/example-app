@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -15,9 +16,6 @@ use App\Http\Controllers\SliderController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/slider/upload', [SliderController::class, 'create'])->name('slider.create');
 Route::post('/slider/upload', [SliderController::class, 'store'])->name('slider.store');
