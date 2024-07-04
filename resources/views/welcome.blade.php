@@ -3,7 +3,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-3xl font-bold mb-4">Welcome to Our University</h1>
+    <h1 class="text-3xl font-bold mb-4">SMUCT- Photo Gellary
+    </h1>
 
     <p class="mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus ultricies magna, at commodo ex hendrerit sit amet.</p>
 

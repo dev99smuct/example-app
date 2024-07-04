@@ -1,0 +1,11 @@
+/* resources/css/app.css */
+
+.navbar a:hover {
+    color: #d1d5db; /* Tailwind's gray-300 */
+}
+
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+/* Adding custom styles to align with Tailwind's utility-first approach */

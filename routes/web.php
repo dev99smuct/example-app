@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\BasicAuthMiddleware;
 
 
 /*
@@ -17,5 +18,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/slider/upload', [SliderController::class, 'create'])->name('slider.create');
-Route::post('/slider/upload', [SliderController::class, 'store'])->name('slider.store');
+
+Route::prefix('slider')->middleware(BasicAuthMiddleware::class)->group(function () {
+    Route::get('/create', [SliderController::class, 'create'])->name('slider.create');
+    Route::post('/store', [SliderController::class, 'store'])->name('slider.store');
+});
