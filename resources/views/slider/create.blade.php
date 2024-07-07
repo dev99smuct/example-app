@@ -1,3 +1,5 @@
+<!-- resources/views/slider/create.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,11 +99,20 @@
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
 
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="Sports">Sports</option>
-                <option value="Study">Study</option>
-                <option value="Fest">Fest</option>
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="science">Science</option>
+                <option value="arts">Arts</option>
+                <option value="commerce">Commerce</option>
+                <!-- Add more departments as needed -->
+            </select>
+
+            <label for="subcategory">Subcategory:</label>
+            <select id="subcategory" name="subcategory" required>
+                <option value="sports">Sports</option>
+                <option value="study">Study</option>
+                <option value="fest">Fest</option>
+                <!-- Add more subcategories as needed -->
             </select>
 
             <label for="image">Image:</label>

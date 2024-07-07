@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-3xl font-bold mb-4">SMUCT- Photo Gallery</h1>
-
-    <p class="mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus ultricies magna, at commodo ex hendrerit sit amet.</p>
+    <h1 class="text-3xl font-bold mb-4">{{ ucfirst($department) }} Department</h1>
 
     <style>
         .grid {
@@ -58,7 +56,7 @@
         }
     </style>
 
-    @foreach ($slides->groupBy('subcategory') as $subcategory => $slidesBySubcategory)
+    @foreach ($slides as $subcategory => $slidesBySubcategory)
         <div>
             <h3 class="subcategory-title">{{ ucfirst($subcategory) }}</h3>
             <div class="grid">

@@ -20,13 +20,54 @@
         nav ul li a:hover {
             text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
         }
+
+        /* Dropdown styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            min-width: 160px;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 4px;
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: #000;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
     </style>
     <script>
-        // JavaScript to add scroll event listener
+        // JavaScript to handle dropdown functionality
         document.addEventListener('DOMContentLoaded', function () {
-            window.addEventListener('scroll', function () {
-                var nav = document.querySelector('nav');
-                nav.classList.toggle('scrolled', window.scrollY > 0);
+            // Select the dropdown trigger element
+            var departmentDropdown = document.querySelector('.department-dropdown');
+
+            // Select the dropdown menu
+            var dropdownMenu = document.querySelector('.dropdown-menu');
+
+            // Event listener for mouseenter to show dropdown
+            departmentDropdown.addEventListener('mouseenter', function () {
+                dropdownMenu.classList.add('show');
+            });
+
+            // Event listener for mouseleave to hide dropdown (modified to keep menu open when moving to dropdown)
+            document.addEventListener('mouseover', function (event) {
+                // Check if the mouse is outside the dropdown and link
+                if (!event.target.closest('.department-dropdown') && !event.target.closest('.dropdown-menu')) {
+                    dropdownMenu.classList.remove('show');
+                }
             });
         });
     </script>
@@ -37,7 +78,6 @@
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center space-x-2">
             <img src="{{ asset('app/images/logo.png') }}" alt="University Logo" class="h-10">
-
         </a>
 
         <!-- Menu -->
@@ -45,14 +85,21 @@
             <li><a href="{{ route('home') }}" class="hover:text-gray-300">Home</a></li>
             <li><a href="https://smuct.ac.bd/" class="hover:text-gray-300">Website</a></li>
             <li><a href="https://smuct.ac.bd/contact/" class="hover:text-gray-300">Contact</a></li>
+
+            <!-- Department Dropdown -->
+            <li class="relative">
+                <a href="#" class="department-dropdown hover:text-gray-300">Departments</a>
+                <div class="dropdown-menu">
+                    <a href="{{ route('department', ['department' => 'science']) }}">Science</a>
+                    <a href="{{ route('department', ['department' => 'arts']) }}">Arts</a>
+                    <a href="{{ route('department', ['department' => 'commerce']) }}">Commerce</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
 
-
-{{-- kamrul aikhan a kaj korba --}}
 <div class="container mx-auto p-4">
-
     <!-- Main content -->
     <div class="h-64 bg-white shadow-lg rounded-lg p-6 mb-4">
         <!-- Example content -->
@@ -60,16 +107,15 @@
         <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis odio, venenatis ac justo eget, efficitur vehicula felis. Fusce in tortor vel leo volutpat malesuada non in elit.</p>
     </div>
 
-    <div class="container mx-auto p-4">
-        @yield('content')
-    </div>
+    <!-- Yielded content from Blade -->
+    @yield('content')
 
     <!-- More content... -->
 </div>
 
 <footer class="bg-gray-800 text-white text-center py-4 mt-8">
     <div class="container mx-auto">
-        &copy; {{ date('Y') }}Most popular university in Bangladesh | Powered by SMUCT Software Development Department. All rights reserved.
+        &copy; {{ date('Y') }} Most popular university in Bangladesh | Powered by SMUCT Software Development Department. All rights reserved.
     </div>
 </footer>
 

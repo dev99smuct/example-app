@@ -23,3 +23,5 @@ Route::prefix('slider')->middleware(BasicAuthMiddleware::class)->group(function 
     Route::get('/create', [SliderController::class, 'create'])->name('slider.create');
     Route::post('/store', [SliderController::class, 'store'])->name('slider.store');
 });
+
+Route::get('/department/{department}', [SliderController::class, 'showDepartment'])->name('department');

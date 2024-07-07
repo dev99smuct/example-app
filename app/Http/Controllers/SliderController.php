@@ -16,7 +16,8 @@ class SliderController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'category' => 'required|string',
+            'department' => 'required|string',
+            'subcategory' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -26,10 +27,19 @@ class SliderController extends Controller
         // Save to database
         Slide::create([
             'title' => $request->title,
-            'category' => $request->category, // Ensure category is saved
+            'department' => $request->department,
+            'subcategory' => $request->subcategory,
             'image' => '/storage/' . $imagePath,
         ]);
 
         return redirect()->route('slider.create')->with('success', 'Slide uploaded successfully.');
     }
+
+
+    public function showDepartment($department)
+{
+    $slides = Slide::where('department', $department)->get()->groupBy('subcategory');
+    return view('department.show', compact('slides', 'department'));
+}
+
 }

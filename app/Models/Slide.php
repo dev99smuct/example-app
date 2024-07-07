@@ -11,7 +11,8 @@ class Slide extends Model
 
     protected $fillable = [
         'title',
-        'category', 
+        'department', // Add department to fillable
+        'subcategory', // Add subcategory to fillable
         'image',
     ];
 }
