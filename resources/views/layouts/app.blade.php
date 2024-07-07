@@ -82,19 +82,21 @@
 
         <!-- Menu -->
         <ul class="flex flex-row space-x-4">
+
             <li><a href="{{ route('home') }}" class="hover:text-gray-300">Home</a></li>
+                 <!-- Department Dropdown -->
+                 <li class="relative">
+                    <a href="#" class="department-dropdown hover:text-gray-300">Departments</a>
+                    <div class="dropdown-menu">
+                        <a href="{{ route('department', ['department' => 'science']) }}">Science</a>
+                        <a href="{{ route('department', ['department' => 'arts']) }}">Arts</a>
+                        <a href="{{ route('department', ['department' => 'commerce']) }}">Commerce</a>
+                    </div>
+                </li>
             <li><a href="https://smuct.ac.bd/" class="hover:text-gray-300">Website</a></li>
             <li><a href="https://smuct.ac.bd/contact/" class="hover:text-gray-300">Contact</a></li>
 
-            <!-- Department Dropdown -->
-            <li class="relative">
-                <a href="#" class="department-dropdown hover:text-gray-300">Departments</a>
-                <div class="dropdown-menu">
-                    <a href="{{ route('department', ['department' => 'science']) }}">Science</a>
-                    <a href="{{ route('department', ['department' => 'arts']) }}">Arts</a>
-                    <a href="{{ route('department', ['department' => 'commerce']) }}">Commerce</a>
-                </div>
-            </li>
+
         </ul>
     </div>
 </nav>

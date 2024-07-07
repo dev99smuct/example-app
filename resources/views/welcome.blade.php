@@ -65,9 +65,7 @@
                 @foreach ($slidesBySubcategory as $slide)
                     <div class="border">
                         <img src="{{ asset($slide->image) }}" alt="{{ $slide->title }}">
-                        <div class="p-4">
-                            <h2>{{ $slide->title }}</h2>
-                        </div>
+
                     </div>
                 @endforeach
             </div>
