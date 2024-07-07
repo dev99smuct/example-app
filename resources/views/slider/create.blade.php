@@ -1,5 +1,3 @@
-<!-- resources/views/slider/create.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +40,7 @@
         }
 
         .card form input[type="text"],
+        .card form select,
         .card form input[type="file"],
         .card form button {
             width: 100%;
@@ -66,7 +65,7 @@
         .success-message {
             color: #0836cc;
             margin-top: 10px;
-        } 
+        }
 
         .home-link {
             display: inline-block;
@@ -97,6 +96,13 @@
 
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="Sports">Sports</option>
+                <option value="Study">Study</option>
+                <option value="Fest">Fest</option>
+            </select>
 
             <label for="image">Image:</label>
             <input type="file" id="image" name="image" accept="image/*" required>

@@ -16,7 +16,8 @@ class SliderController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust max file size if needed
+            'category' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle file upload
@@ -25,6 +26,7 @@ class SliderController extends Controller
         // Save to database
         Slide::create([
             'title' => $request->title,
+            'category' => $request->category, // Ensure category is saved
             'image' => '/storage/' . $imagePath,
         ]);
 
