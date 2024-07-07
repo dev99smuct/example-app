@@ -22,7 +22,7 @@
         .grid .border img {
             padding: 2px;
             width: 100%; /* Make the image fill its container */
-            height: 350px;
+            height: 200px;
             display: block;
             transition: transform 0.3s ease;
             object-fit: cover; /* Smooth transform effect */

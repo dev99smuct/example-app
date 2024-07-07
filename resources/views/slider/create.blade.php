@@ -101,9 +101,12 @@
 
             <label for="department">Department:</label>
             <select id="department" name="department" required>
-                <option value="science">Science</option>
-                <option value="arts">Arts</option>
-                <option value="commerce">Commerce</option>
+                <option value="CSE">CSE</option>
+                <option value="BBA">BBA</option>
+                <option value="FDT">FDT</option>
+                <option value="GDM">GDM</option>
+                <option value="ENG">ENG</option>
+                <option value="IA">IA</option>
                 <!-- Add more departments as needed -->
             </select>
 

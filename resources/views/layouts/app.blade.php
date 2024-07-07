@@ -10,7 +10,6 @@
 
         /* Custom CSS for header design */
         nav {
-            background-color: rgba(74, 85, 104, 0.9); /* Initial semi-transparent background */
             backdrop-filter: blur(10px); /* Blur effect */
             transition: background-color 0.3s ease; /* Smooth transition for background color */
         }
@@ -71,13 +70,14 @@
             });
         });
     </script>
+    <link rel="alternate icon" class="js-site-favicon" type="image/png" href="{{ asset('/images/logo.png') }}">
 </head>
 <body class="bg-gray-100">
 
-<nav class="bg-gray-800 text-white py-4 shadow-lg sticky top-0 z-50">
+<nav class="text-black py-4 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center space-x-2">
-            <img src="{{ asset('app/images/logo.png') }}" alt="University Logo" class="h-10">
+            <img src="{{ asset('/images/logo.png') }}" alt="University Logo" class="h-10">
         </a>
 
         <!-- Menu -->
@@ -88,9 +88,12 @@
                  <li class="relative">
                     <a href="#" class="department-dropdown hover:text-gray-300">Departments</a>
                     <div class="dropdown-menu">
-                        <a href="{{ route('department', ['department' => 'science']) }}">Science</a>
-                        <a href="{{ route('department', ['department' => 'arts']) }}">Arts</a>
-                        <a href="{{ route('department', ['department' => 'commerce']) }}">Commerce</a>
+                        <a href="{{ route('department', ['department' => 'CSE']) }}">CSE</a>
+                        <a href="{{ route('department', ['department' => 'BBA']) }}">BBA</a>
+                        <a href="{{ route('department', ['department' => 'GDM']) }}">GDM</a>
+                        <a href="{{ route('department', ['department' => 'ENG']) }}">ENG</a>
+                        <a href="{{ route('department', ['department' => 'IA']) }}">IA</a>
+                        <a href="{{ route('department', ['department' => 'FDT']) }}">FDT</a>
                     </div>
                 </li>
             <li><a href="https://smuct.ac.bd/" class="hover:text-gray-300">Website</a></li>

@@ -6,8 +6,20 @@
     <style>
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
             gap: 20px; /* Gap between grid items */
+
+            /* Initially 1 column */
+            grid-template-columns: 1fr;
+
+            /* On tablets and larger, 2 columns */
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* On laptops and larger, 4 columns */
+            @media (min-width: 1024px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .grid .border {
@@ -20,7 +32,7 @@
         .grid .border img {
             padding: 2px;
             width: 100%; /* Make the image fill its container */
-            height: 350px;
+            height: 200px;
             display: block;
             transition: transform 0.3s ease;
             object-fit: cover; /* Smooth transform effect */
@@ -63,9 +75,7 @@
                 @foreach ($slidesBySubcategory as $slide)
                     <div class="border">
                         <img src="{{ asset($slide->image) }}" alt="{{ $slide->title }}">
-                        <div class="p-4">
-                            <h2>{{ $slide->title }}</h2>
-                        </div>
+
                     </div>
                 @endforeach
             </div>

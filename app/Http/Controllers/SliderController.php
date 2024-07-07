@@ -18,7 +18,7 @@ class SliderController extends Controller
             'title' => 'required|string|max:255',
             'department' => 'required|string',
             'subcategory' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:32768',
         ]);
 
         // Handle file upload
