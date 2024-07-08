@@ -37,9 +37,9 @@ class SliderController extends Controller
 
 
     public function showDepartment($department)
-{
-    $slides = Slide::where('department', $department)->get()->groupBy('subcategory');
-    return view('department.show', compact('slides', 'department'));
-}
+    {
+        $slides = Slide::where('department', $department)->get()->groupBy('subcategory');
+        return view('department.show', compact('slides', 'department'));
+    }
 
 }
