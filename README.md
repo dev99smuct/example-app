@@ -38,6 +38,13 @@ If the project has seeders defined, you can optionally run them to populate the 
 ```bash
   php artisan db:seed
 ```
+
+Ensure Storage Link: If you haven't already, create a symbolic link from public/storage to storage/app/public. This makes files in storage/app/public accessible from the web.
+
+```bash
+  php artisan storage:link
+```
+
 Serve the Application:
 You can use Laravel's built-in development server to run the application:
 
