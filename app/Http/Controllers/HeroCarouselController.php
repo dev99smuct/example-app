@@ -20,7 +20,7 @@ class HeroCarouselController extends Controller
         ]);
 
         // Handle file upload
-        $imagePath = $request->file('image')->store('slider_images', 'public');
+        $imagePath = $request->file('image')->store('hero_carousel', 'public');
 
         // Save to database
         HeroCarousel::create([

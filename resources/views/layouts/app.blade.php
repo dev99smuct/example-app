@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our University</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <style>
         /* Tailwind CSS CDN */
         @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
@@ -104,9 +110,11 @@
     </div>
 </nav>
 
+@include('components.hero_carousel')
+
 <div class="container mx-auto p-4">
     <!-- Main content -->
-    <div class="h-64 bg-white shadow-lg rounded-lg p-6 mb-4">
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-4">
         <!-- Example content -->
         <h1 class="text-2xl font-bold text-gray-800">Welcome to Most Popular University in Bangladesh</h1>
         <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis odio, venenatis ac justo eget, efficitur vehicula felis. Fusce in tortor vel leo volutpat malesuada non in elit.</p>
