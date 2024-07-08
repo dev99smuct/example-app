@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('slides', function (Blueprint $table) {
-            $table->string('category')->nullable()->change();
+        Schema::create('hero_carousels', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('image');
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('slides', function (Blueprint $table) {
-            $table->string('category')->nullable(false)->change();
-        });
+        Schema::dropIfExists('hero_carousels');
     }
 };

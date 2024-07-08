@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\BasicAuthMiddleware;
+use App\Http\Controllers\HeroCarouselController;
 
 
 /*
@@ -25,3 +26,4 @@ Route::prefix('slider')->middleware(BasicAuthMiddleware::class)->group(function 
 });
 
 Route::get('/department/{department}', [SliderController::class, 'showDepartment'])->name('department');
+Route::resource('hero_carousels', HeroCarouselController::class);
