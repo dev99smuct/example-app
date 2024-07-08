@@ -1,12 +1,11 @@
 Clone the Repository:
 
-
-
 Install Composer Dependencies:
 Navigate into the cloned project directory and run:
 
 ```bash
-   composer install
+   composer install```
+
 This will install all PHP dependencies required by Laravel.
 
 Environment File:
