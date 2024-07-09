@@ -82,13 +82,19 @@
 
     @yield('content')
 
- 
+
 </div>
 
 <footer class="bg-gray-800 text-white text-center py-4 mt-8">
     <div class="container mx-auto">
-        &copy; {{ date('Y') }} Most popular university in Bangladesh | Powered by SMUCT Software Development Department. All rights reserved.
+        <ul class="flex justify-center space-x-4">
+            <li><a href="{{ route('home') }}" class="hover:text-gray-300">Home</a></li>
+            <li><a href="https://smuct.ac.bd/" class="hover:text-gray-300">Website</a></li>
+            <li><a href="https://smuct.ac.bd/contact/" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+        <p class="mt-4">&copy; {{ date('Y') }} Most popular university in Bangladesh | Powered by SMUCT Software Development Department. All rights reserved.</p>
     </div>
+</footer>
 </footer>
 
 </body>
