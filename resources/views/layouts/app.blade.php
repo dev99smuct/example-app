@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our University</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Slick Slider CSS and JS -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -13,22 +13,22 @@
 
 
     <script>
-        // JavaScript to handle dropdown functionality
+
         document.addEventListener('DOMContentLoaded', function () {
-            // Select the dropdown trigger element
+
             var departmentDropdown = document.querySelector('.department-dropdown');
 
-            // Select the dropdown menu
+
             var dropdownMenu = document.querySelector('.dropdown-menu');
 
-            // Event listener for mouseenter to show dropdown
+
             departmentDropdown.addEventListener('mouseenter', function () {
                 dropdownMenu.classList.add('show');
             });
 
-            // Event listener for mouseleave to hide dropdown (modified to keep menu open when moving to dropdown)
+
             document.addEventListener('mouseover', function (event) {
-                // Check if the mouse is outside the dropdown and link
+
                 if (!event.target.closest('.department-dropdown') && !event.target.closest('.dropdown-menu')) {
                     dropdownMenu.classList.remove('show');
                 }
@@ -45,11 +45,11 @@
             <img src="{{ asset('/images/logo.png') }}" alt="University Logo" class="h-10">
         </a>
 
-        <!-- Menu -->
+
         <ul class="flex flex-row space-x-4">
 
             <li><a href="{{ route('home') }}" class="hover:text-gray-300">Home</a></li>
-                 <!-- Department Dropdown -->
+
                  <li class="relative">
                     <a href="#" class="department-dropdown hover:text-gray-300">Departments</a>
                     <div class="dropdown-menu">
@@ -72,17 +72,17 @@
 @include('components.hero_carousel')
 
 <div class="container mx-auto p-4">
-    <!-- Main content -->
+
     <div class="bg-white shadow-lg rounded-lg p-6 mb-4">
         <!-- Example content -->
         <h1 class="text-2xl font-bold text-gray-800">SMUCT PHOTO GALLERY</h1>
         <p class="mt-2 text-gray-600">Welcome to Most Popular University in Bangladesh</p>
     </div>
 
-    <!-- Yielded content from Blade -->
+
     @yield('content')
 
-    <!-- More content... -->
+ 
 </div>
 
 <footer class="bg-gray-800 text-white text-center py-4 mt-8">

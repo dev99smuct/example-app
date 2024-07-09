@@ -19,10 +19,10 @@ class HeroCarouselController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:32768',
         ]);
 
-        // Handle file upload
+      
         $imagePath = $request->file('image')->store('hero_carousel', 'public');
 
-        // Save to database
+
         HeroCarousel::create([
             'title' => $request->title,
             'image' => '/storage/' . $imagePath,

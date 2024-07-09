@@ -6,8 +6,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\BasicAuthMiddleware;
 use App\Http\Controllers\HeroCarouselController;
 
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('slider')->middleware(BasicAuthMiddleware::class)->group(function () {

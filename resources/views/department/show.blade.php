@@ -20,6 +20,6 @@
         </div>
     @endforeach
 
-    <!-- Include necessary JavaScript for lightbox -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 @endsection

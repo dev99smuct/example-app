@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\HeroCarousel;
 
 use Illuminate\Http\Request;
-use App\Models\Slide; // Import the Slide model
+use App\Models\Slide; 
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $slides = Slide::all(); // Fetch all slides from the database
+        $slides = Slide::all();
 
         $hero_carousels = HeroCarousel::all();
 
