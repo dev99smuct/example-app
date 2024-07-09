@@ -9,50 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <style>
-        /* Tailwind CSS CDN */
-        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
-        /* Custom CSS for header design */
-        nav {
-            backdrop-filter: blur(10px); /* Blur effect */
-            transition: background-color 0.3s ease; /* Smooth transition for background color */
-        }
-        nav.scrolled {
-            background-color: rgba(74, 85, 104, 0.5); /* More transparent background on scroll */
-        }
-        nav ul li a:hover {
-            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Dropdown styles */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            z-index: 10;
-            top: 100%;
-            left: 0;
-            min-width: 160px;
-            background-color: #fff;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px;
-            border-radius: 4px;
-        }
-        .dropdown-menu.show {
-            display: block;
-        }
-        .dropdown-menu a {
-            display: block;
-            padding: 8px 16px;
-            color: #000;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .dropdown-menu a:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
     <script>
         // JavaScript to handle dropdown functionality
         document.addEventListener('DOMContentLoaded', function () {
@@ -116,8 +75,8 @@
     <!-- Main content -->
     <div class="bg-white shadow-lg rounded-lg p-6 mb-4">
         <!-- Example content -->
-        <h1 class="text-2xl font-bold text-gray-800">Welcome to Most Popular University in Bangladesh</h1>
-        <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis odio, venenatis ac justo eget, efficitur vehicula felis. Fusce in tortor vel leo volutpat malesuada non in elit.</p>
+        <h1 class="text-2xl font-bold text-gray-800">SMUCT PHOTO GALLERY</h1>
+        <p class="mt-2 text-gray-600">Welcome to Most Popular University in Bangladesh</p>
     </div>
 
     <!-- Yielded content from Blade -->
